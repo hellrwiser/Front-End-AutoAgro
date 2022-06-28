@@ -1,0 +1,558 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.navbar{
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 20px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: rgb(48, 48, 48);;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+
+}
+.navbar .logo a span{
+    color: #00b0ff;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #00b0ff;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+/* menu btn */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.menu-btn1{
+    color: #00b0ff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 50px;
+    width: 48px;
+    background: #00b0ff;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 15px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+/* responsive */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .skills .skills-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+body {
+
+    background-color: #212121;
+    position: relative;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input {
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-label {
+    position: absolute;
+    left: 15px;
+    color: #e8e8e8;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus,
+input:valid {
+    outline: none;
+    border: 1.5px solid #1a73e8;
+}
+
+.input:focus~label,
+input:valid~label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #212121;
+    padding: 0 .2em;
+    color: #2196f3;
+}
+
+.card {
+    top: 7rem;
+    left: 16rem;
+    margin: 30px;
+    display: inline-block;
+    justify-content: space-between;
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.home .card .btn1  {
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    top: 33.5rem;
+    left: 21rem;
+    border: rgb(51, 51, 51);
+    display: inline-block;
+    position: fixed;
+    border-radius: 50px;
+    background-color: #00b0ff;
+    color: #fff9f9;
+    cursor: pointer;
+    
+}
+.home .card .text-1{
+    font-family: 'Ubuntu', sans-serif;
+    left: 5.5rem;
+    position: fixed;
+    color: #eeeeee;
+    margin-top: 1.8rem;
+    font-size: 25px;
+}
+.home .card .text-2{
+    font-family: 'Ubuntu', sans-serif;
+    left: 1.5rem;
+    position: fixed;
+    color: #eeeeee;
+    font-size: 45px;
+    font-weight: 600;
+    top: 6.2rem;
+
+}
+.home .card .text-3{
+    font-family: 'Ubuntu', sans-serif;
+    left: 1.5rem;
+    position: fixed;
+    color: #eeeeee;
+    font-size: 45px;
+    font-weight: 600;
+    top: 11.5rem;
+}
+.home .card .text-4{
+    font-family: 'Ubuntu', sans-serif;
+    left: 1.5rem;
+    position: fixed;
+    color: #eeeeee;
+    font-size: 45px;
+    font-weight: 600;
+    top: 16.6rem;
+}
+.home .card .text-5{
+    font-family: 'Ubuntu', sans-serif;
+    left: 1.5rem;
+    position: fixed;
+    color: #eeeeee;
+    font-size: 45px;
+    font-weight: 600;
+    top: 22rem;
+}
+.home .card .text-6{
+    font-family: 'Ubuntu', sans-serif;
+    left: 5.5rem;
+    position: fixed;
+    color: #eeeeee;
+    font-size: 17px;
+    font-weight: 600;
+    top: 34.3rem;
+}
+.switch {
+    top: 1.5rem;
+    left: 1rem;
+    position: fixed;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  .switch2 {
+    top: 34rem;
+    left: 1rem;
+    position: fixed;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+ 
+   .switch2 input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .line-1 {
+    margin-top: 5.2rem;
+    height: 1px;
+    background: rgb(199, 199, 199);
+  }
+ .line-2 {
+      margin-top: 6.5rem;
+      height: 1px;
+      background: rgb(199, 199, 199);
+  }
+  .button {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #777777;
+    border-radius: 30px;
+    position: relative;
+    color: white;
+    padding: 2px 5px;
+    left: 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+  }
+  
+  .button1 {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgba(71, 69, 69, 0.2);
+    color: rgb(255, 255, 255); 
+
+  }
+  .button1:hover {
+    color: #00b0ff;
+  }
+  .button2 {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgba(71, 69, 69, 0.2);
+    color: rgb(255, 255, 255); 
+    border: 0px solid #58aeff;
+  }
+  .button2:hover {
+    background-color: #58aeff;
+    color:rgb(255, 255, 255)
+  }
+  .button3 {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgba(71, 69, 69, 0.2);
+    color: rgb(255, 255, 255); 
+    border: 0px solid #58aeff;
+  }
+  .button3:hover {
+    background-color: #58aeff;
+    color:rgb(255, 255, 255)
+  }
+  .button4 {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgba(71, 69, 69, 0.2);
+    color: rgb(255, 255, 255); 
+    border: 0px solid #58aeff;
+  }
+  .button4:hover {
+    background-color: #58aeff;
+    color:rgb(255, 255, 255)
+  }
+  .home .card .days1 {
+    top: 7rem;
+    width: 200px;
+    height: 10px;
+    position: fixed;
+    left: 10rem;
+  }
+  .home .card .days2 {
+    top: 12.4rem;
+    width: 200px;
+    height: 10px;
+    position: fixed;
+    left: 10rem;
+  }
+  .home .card .days3 {
+    top: 17.5rem;
+    width: 200px;
+    height: 10px;
+    position: fixed;
+    left: 10rem;
+  }
+  .home .card .days4 {
+    top: 22.8rem;
+    width: 200px;
+    height: 10px;
+    position: fixed;
+    left: 10rem;
+  }
